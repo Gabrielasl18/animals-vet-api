@@ -1,5 +1,6 @@
 services:
   animals-vet-api:
+    image: vet-animals
     build: .
     command: bundle exec ruby main.rb
     volumes:
