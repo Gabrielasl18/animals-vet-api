@@ -1,0 +1,29 @@
+services:
+  animals-vet-api:
+    build: .
+    command: bundle exec ruby main.rb
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "4567:4567"
+    depends_on:
+    - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: animals-vet-mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password --bind-address=0.0.0.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vet_animals
+      MYSQL_USER: animals-vet
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
