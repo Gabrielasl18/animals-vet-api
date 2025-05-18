@@ -5,11 +5,11 @@ set :bind, '0.0.0.0'
 set :port, 4567
 
 ActiveRecord::Base.establish_connection({
-  adapter:  'mysql2',
-  host:     'animals-vet-mysql', 
-  username: 'root',
-  password: 'root',
-  database: 'vet-animals'
+  adapter:  'mysql2',          
+  host:     'animals-vet-mysql',
+  username: 'root',            
+  password: 'root',            
+  database: 'vet_animals'      
 })
 
 class Animal < ActiveRecord::Base
