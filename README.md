@@ -13,13 +13,13 @@ docker compose up --build
 docker exec -it animals-vet-mysql mysql -uroot -proot
 ```
 
-## Curl command
+## Curl Command
 
 ```
 curl localhost:4567/animals
 ```
 
-Metódos Aceitos
+Methods 
 
 * GET
 * POST
