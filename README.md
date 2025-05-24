@@ -21,12 +21,16 @@ docker exec -it animals-vet-mysql mysql -uroot -proot
 
 ## Curl Command
 
+* EXAMPLE - GET 
+
 ```
 curl localhost:4567/animals
 ```
 
-Methods 
+* EXAMPLE - POST
 
-* GET
-* POST
-* DELETE
+```
+curl -X POST http://localhost:4567/create \
+     -H "Content-Type: application/json" \
+     -d '{"name": "jurandi", "species":"cat", "age": "4", "owner":"jurema"}'
+```
