@@ -71,6 +71,7 @@ get '/actions' do
   "Quantidades de consultas no banco de dados #{$contador}."
 
   # imprime no console/terminal onde o servidor está rodando (útil para debug).
+  # identificador pré-definido
   puts "Quantidades de consultas no banco de dados #{$contador}."
 end
 

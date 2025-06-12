@@ -1,14 +1,23 @@
+# classes (Upper camel case, ou seja, sem espaço e todas as outras palavras depois da primeira tem letra maiúscula)
 class Animal < ActiveRecord::Base
+    # equivalente ao this em java, representa o objeto atual (a instância que está executando o método).
     self.table_name = 'animals_cad'
  
     def self.fetch_animals_available
         all.to_a.to_json
+    end
+
+    # método de instância — pode acessar variáveis de instância
+    def message_for_animal
+        #variável de instância, nao precisaria atribuir manualmente, poderia usar o self.name diretamente
+        "Olá, meu nome é #{@name}, tenho #{@age} anos e sou um #{@species}."
     end
 end
 
 # variável constante 
 CONSULTATION_VALUE = 50.0
 
+# snake_case (palavras separadas por underline)
 def handle_count_animals(animals)
   count = animals.count
   { message: "Existem #{count} animais na base de dados." }.to_json
@@ -32,3 +41,5 @@ def calculate_consult(animals, name)
     # Caso não encontre o animal
     { message: "Animal #{name} não encontrado." }.to_json
 end
+
+# Variáveis de classe começam com @@, ex: @@total ?
