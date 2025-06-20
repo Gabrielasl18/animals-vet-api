@@ -1,5 +1,8 @@
 # classes (Upper camel case, ou seja, sem espaço e todas as outras palavras depois da primeira tem letra maiúscula)
 class Animal < ActiveRecord::Base
+    # variável de classe para contar instâncias criadas
+    @@count = 0
+
     # equivalente ao this em java, representa o objeto atual (a instância que está executando o método).
     self.table_name = 'animals_cad'
  
@@ -12,6 +15,10 @@ class Animal < ActiveRecord::Base
         #variável de instância, nao precisaria atribuir manualmente, poderia usar o self.name diretamente
         "Olá, meu nome é #{@name}, tenho #{@age} anos e sou um #{@species}."
     end
+
+    def self.count_animals_created
+        @@count
+  end
 end
 
 # variável constante 

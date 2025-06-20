@@ -69,10 +69,11 @@ end
 get '/actions' do
   # apenas uma string que será exibida como resposta HTTP enviada para o client que fez a requisição
   "Quantidades de consultas no banco de dados #{$contador}."
-
+  "Quantidade de animais criados #{$Animal.count_animals_created}"
   # imprime no console/terminal onde o servidor está rodando (útil para debug).
   # identificador pré-definido
   puts "Quantidades de consultas no banco de dados #{$contador}."
+  puts Animal.count_animals_created
 end
 
 # palavras reservadas no código: class, self, def, end
